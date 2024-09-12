@@ -2,17 +2,17 @@
 const artists = [
     {
         name: "アーティスト1",
-        image: "images/artist1.jpg",  // パスを修正
+        image: "images/artist1.jpg",
         description: "アーティスト1はロックバンドで、エネルギッシュなステージパフォーマンスが特徴です。"
     },
     {
         name: "アーティスト2",
-        image: "images/artist2.jpg",  // パスを修正
+        image: "images/artist2.jpg",
         description: "アーティスト2はソロシンガーで、美しいバラードが人気です。"
     },
     {
         name: "アーティスト3",
-        image: "images/artist3.jpg",  // パスを修正
+        image: "images/artist3.jpg",
         description: "アーティスト3は電子音楽のプロデューサーで、独特のサウンドを作り上げています。"
     }
 ];
@@ -55,4 +55,21 @@ timetable.forEach(slot => {
     const listItem = document.createElement('li');
     listItem.textContent = `${slot.time} - ${slot.artist}`;
     timetableList.appendChild(listItem);
+});
+
+// スクロールによるアニメーション発動
+const observerOptions = {
+    threshold: 0.1
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, observerOptions);
+
+document.querySelectorAll('section, .artist, ul#timetable-list li').forEach(section => {
+    observer.observe(section);
 });

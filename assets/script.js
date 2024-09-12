@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // ナビゲーションバーのスクロール効果　
+    // ナビゲーションバーのスクロール効果　　
     window.addEventListener('scroll', function() {
         const navbar = document.querySelector('.navbar');
         if (window.scrollY > 50) {

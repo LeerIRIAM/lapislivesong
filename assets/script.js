@@ -1,150 +1,42 @@
-// 出演者データ
-const artists = [
-    {
-        name: "アーティスト1",
-        image: "images/artist1.jpg",
-        description: "アーティスト1はロックバンドで、エネルギッシュなステージパフォーマンスが特徴です。"
-    },// 出演者データ
-const artists = [
-    {
-        name: "アーティスト1",
-        image: "images/artist1.jpg",
-        description: "アーティスト1はロックバンドで、エネルギッシュなステージパフォーマンスが特徴です。"
-    },
-    {
-        name: "アーティスト2",
-        image: "images/artist2.jpg",
-        description: "アーティスト2はソロシンガーで、美しいバラードが人気です。"
-    },
-    {
-        name: "アーティスト3",
-        image: "images/artist3.jpg",
-        description: "アーティスト3は電子音楽のプロデューサーで、独特のサウンドを作り上げています。"
-    }
-];
-
-// タイムテーブルデータ
-const timetable = [
-    { time: "12:00", artist: "アーティスト1" },
-    { time: "13:30", artist: "アーティスト2" },
-    { time: "15:00", artist: "アーティスト3" }
-];
-
-// 出演者セクションにアーティストを追加
-const artistContainer = document.getElementById('artist-container');
-
-artists.forEach(artist => {
-    const artistDiv = document.createElement('div');
-    artistDiv.classList.add('artist');
-
-    const artistImage = document.createElement('img');
-    artistImage.src = artist.image;
-    artistImage.alt = artist.name;
-
-    const artistName = document.createElement('h3');
-    artistName.textContent = artist.name;
-
-    const artistDescription = document.createElement('p');
-    artistDescription.textContent = artist.description;
-
-    artistDiv.appendChild(artistImage);
-    artistDiv.appendChild(artistName);
-    artistDiv.appendChild(artistDescription);
-
-    artistContainer.appendChild(artistDiv);
-});
-
-// タイムテーブルにデータを追加
-const timetableList = document.getElementById('timetable-list');
-
-timetable.forEach(slot => {
-    const listItem = document.createElement('li');
-    listItem.textContent = `${slot.time} - ${slot.artist}`;
-    timetableList.appendChild(listItem);
-});
-
-// スクロールによるアニメーション発動
-const observerOptions = {
-    threshold: 0.1
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
+document.addEventListener('DOMContentLoaded', function() {
+    // ナビゲーションバーのスクロール固定効果
+    window.addEventListener('scroll', function() {
+        const navbar = document.querySelector('.navbar');
+        if (window.scrollY > 50) {
+            navbar.classList.add('navbar-scrolled');
+        } else {
+            navbar.classList.remove('navbar-scrolled');
         }
     });
-}, observerOptions);
 
-document.querySelectorAll('section, .artist, ul#timetable-list li').forEach(section => {
-    observer.observe(section);
-});
-
-    {
-        name: "アーティスト2",
-        image: "images/artist2.jpg",
-        description: "アーティスト2はソロシンガーで、美しいバラードが人気です。"
-    },
-    {
-        name: "アーティスト3",
-        image: "images/artist3.jpg",
-        description: "アーティスト3は電子音楽のプロデューサーで、独特のサウンドを作り上げています。"
-    }
-];
-
-// タイムテーブルデータ
-const timetable = [
-    { time: "12:00", artist: "アーティスト1" },
-    { time: "13:30", artist: "アーティスト2" },
-    { time: "15:00", artist: "アーティスト3" }
-];
-
-// 出演者セクションにアーティストを追加
-const artistContainer = document.getElementById('artist-container');
-
-artists.forEach(artist => {
-    const artistDiv = document.createElement('div');
-    artistDiv.classList.add('artist');
-
-    const artistImage = document.createElement('img');
-    artistImage.src = artist.image;
-    artistImage.alt = artist.name;
-
-    const artistName = document.createElement('h3');
-    artistName.textContent = artist.name;
-
-    const artistDescription = document.createElement('p');
-    artistDescription.textContent = artist.description;
-
-    artistDiv.appendChild(artistImage);
-    artistDiv.appendChild(artistName);
-    artistDiv.appendChild(artistDescription);
-
-    artistContainer.appendChild(artistDiv);
-});
-
-// タイムテーブルにデータを追加
-const timetableList = document.getElementById('timetable-list');
-
-timetable.forEach(slot => {
-    const listItem = document.createElement('li');
-    listItem.textContent = `${slot.time} - ${slot.artist}`;
-    timetableList.appendChild(listItem);
-});
-
-// スクロールによるアニメーション発動
-const observerOptions = {
-    threshold: 0.1
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-        }
+    // スムーズスクロール機能
+    const links = document.querySelectorAll('.navbar a');
+    links.forEach(link => {
+        link.addEventListener('click', function(event) {
+            event.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            targetSection.scrollIntoView({ behavior: 'smooth' });
+        });
     });
-}, observerOptions);
 
-document.querySelectorAll('section, .artist, ul#timetable-list li').forEach(section => {
-    observer.observe(section);
+    // チケットボタンのクリックでポップアップを表示
+    const ticketButton = document.querySelector('.btn');
+    ticketButton.addEventListener('click', function(event) {
+        event.preventDefault();
+        showPopup('チケット購入ページに移動します。');
+    });
+
+    // ポップアップ表示関数
+    function showPopup(message) {
+        const popup = document.createElement('div');
+        popup.classList.add('popup');
+        popup.innerText = message;
+        document.body.appendChild(popup);
+
+        // ポップアップを3秒後に削除
+        setTimeout(() => {
+            popup.remove();
+        }, 3000);
+    }
 });

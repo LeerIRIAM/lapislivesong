@@ -2,7 +2,7 @@
 window.addEventListener('scroll', function() {
   const header = document.querySelector('header');
   const scrollPosition = window.scrollY;
-　
+
   if (scrollPosition > 100) {
     header.style.backgroundColor = '#333';
   } else {
@@ -33,6 +33,15 @@ sr.reveal('.slide-in-left', {
 // 右からスライドイン
 sr.reveal('.slide-in-right', {
   origin: 'right',
+  distance: '50px',
+  duration: 1000,
+  opacity: 0,
+  reset: false
+});
+
+// 上からスライドイン
+sr.reveal('.slide-in-up', {
+  origin: 'bottom',
   distance: '50px',
   duration: 1000,
   opacity: 0,

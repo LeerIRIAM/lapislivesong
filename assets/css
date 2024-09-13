@@ -1,0 +1,122 @@
+/* 共通スタイル */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+header, footer {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem 0;
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.navbar li {
+  margin-right: 1rem;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.section {
+  padding: 2rem 0;
+}
+
+.section h2 {
+  margin-top: 0;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #007BFF;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+.event-image, .artist-card img, .artist-profile img {
+  max-width: 100%;
+  height: auto;
+}
+
+.fade-in {
+  animation: fadeIn 2s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* イベント概要セクション */
+.overview {
+  background-color: #f0f0f0;
+}
+
+/* 出演者セクション */
+.artists {
+  background-color: #e9ecef;
+}
+
+.artist-card {
+  margin-bottom: 1.5rem;
+}
+
+.artist-card img {
+  width: 100px;
+  height: auto;
+  margin-right: 1rem;
+}
+
+/* アーティスト紹介セクション */
+.artists-intro {
+  background-color: #f9f9f9;
+}
+
+.artist-profile {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.artist-profile img {
+  width: 150px;
+  height: auto;
+  margin-right: 1rem;
+}
+
+/* フッター */
+.footer {
+  text-align: center;
+}

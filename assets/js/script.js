@@ -1,4 +1,4 @@
-// スクロール時にナビゲーションバーの背景色を変える
+// スクロール時にヘッダーの背景色を変更
 window.addEventListener('scroll', function() {
   const header = document.querySelector('header');
   const scrollPosition = window.scrollY;
@@ -8,6 +8,35 @@ window.addEventListener('scroll', function() {
   } else {
     header.style.backgroundColor = 'transparent';
   }
+});
+
+// ScrollRevealを使ってアニメーションを設定
+window.sr = ScrollReveal();
+
+// フェードインアニメーションの設定
+sr.reveal('.fade-in', {
+  duration: 1000,
+  distance: '0px',
+  opacity: 0,
+  reset: false
+});
+
+// 左からスライドイン
+sr.reveal('.slide-in-left', {
+  origin: 'left',
+  distance: '50px',
+  duration: 1000,
+  opacity: 0,
+  reset: false
+});
+
+// 右からスライドイン
+sr.reveal('.slide-in-right', {
+  origin: 'right',
+  distance: '50px',
+  duration: 1000,
+  opacity: 0,
+  reset: false
 });
 
 // ページ内リンクでスムーズにスクロール

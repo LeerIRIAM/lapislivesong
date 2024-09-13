@@ -2,7 +2,7 @@
 window.addEventListener('scroll', function() {
   const header = document.querySelector('header');
   const scrollPosition = window.scrollY;
-
+　
   if (scrollPosition > 100) {
     header.style.backgroundColor = '#333';
   } else {

@@ -3,39 +3,69 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lapis Live Song</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Lapis Live Event</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-  <header class="header">
-    <h1 class="title">Lapis Live Song</h1>
-    <nav class="nav">
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#songs">Songs</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+  <!-- ナビゲーションバー -->
+  <header class="navbar">
+    <div class="container">
+      <h1 class="logo">Lapis Live</h1>
+      <nav>
+        <ul>
+          <li><a href="#overview">概要</a></li>
+          <li><a href="#artists">出演者</a></li>
+          <li><a href="#tickets">チケット情報</a></li>
+          <li><a href="artists.html">アーティスト紹介</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <section id="about" class="section">
-    <h2 class="section-title">About Us</h2>
-    <p class="section-content">We are Lapis, bringing you the best live music experience.</p>
-  </section>
-
-  <section id="songs" class="section">
-    <h2 class="section-title">Our Songs</h2>
-    <div class="song-list">
-      <div class="song-item">Song 1</div>
-      <div class="song-item">Song 2</div>
-      <div class="song-item">Song 3</div>
+  <!-- イベント概要セクション -->
+  <section id="overview" class="section overview fade-in">
+    <div class="container">
+      <h2>イベント概要</h2>
+      <p>「Lapis Live」はファンタジーと音楽が融合した壮大なイベントです。お気に入りのキャラクターと一緒に夢のような時間をお楽しみください。</p>
+      <img src="assets/images/event-image.jpg" alt="イベントのイメージ" class="event-image">
+      <p><strong>日程:</strong> 2024年10月15日</p>
+      <p><strong>場所:</strong> 東京ドーム</p>
     </div>
   </section>
 
-  <footer id="contact" class="footer">
-    <p>Contact us at: contact@lapislivesong.com</p>
+  <!-- 出演者セクション -->
+  <section id="artists" class="section artists fade-in">
+    <div class="container">
+      <h2>出演アーティスト</h2>
+      <div class="artist-card">
+        <img src="assets/images/artist1.jpg" alt="アーティスト1">
+        <h3>アーティスト1</h3>
+        <p>アーティスト1の説明。彼らのパフォーマンスはエネルギッシュで、多くのファンを魅了しています。</p>
+      </div>
+      <div class="artist-card">
+        <img src="assets/images/artist2.jpg" alt="アーティスト2">
+        <h3>アーティスト2</h3>
+        <p>アーティスト2の説明。独自のスタイルで知られ、観客を魅了するステージをお届けします。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- チケット情報セクション -->
+  <section id="tickets" class="section tickets fade-in">
+    <div class="container">
+      <h2>チケット情報</h2>
+      <p>早めにチケットを購入して、最高の座席を確保しましょう！</p>
+      <a href="https://ticket-website.com" class="btn">チケットを購入する</a>
+    </div>
+  </section>
+
+  <!-- フッター -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2024 Lapis Live. All Rights Reserved.</p>
+    </div>
   </footer>
 
-  <script src="scripts.js"></script>
+  <script src="assets/js/script.js"></script>
 </body>
 </html>

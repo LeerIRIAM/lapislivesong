@@ -1,21 +1,16 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // ナビゲーションバーのスクロール効果　　
-    window.addEventListener('scroll', function() {
-        const navbar = document.querySelector('.navbar');
-        if (window.scrollY > 50) {
-            navbar.classList.add('navbar-scrolled');
-        } else {
-            navbar.classList.remove('navbar-scrolled');
-        }
-    });
+// scripts.js
+document.addEventListener('DOMContentLoaded', () => {
+  const sections = document.querySelectorAll('.section');
 
-    // スムーズスクロール機能
-    const links = document.querySelectorAll('.navbar a');
-    links.forEach(link => {
-        link.addEventListener('click', function(event) {
-            event.preventDefault();
-            const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
-            targetSection.scrollIntoView({ behavior: 'smooth' });
-        });
-   
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = 1;
+      }
+    });
+  });
+
+  sections.forEach(section => {
+    observer.observe(section);
+  });
+});

@@ -1,14 +1,4 @@
-// スクロール時にヘッダーの背景色を変更
-window.addEventListener('scroll', function() {
-  const header = document.querySelector('header');
-  const scrollPosition = window.scrollY;
 
-  if (scrollPosition > 100) {
-    header.style.backgroundColor = '#333';
-  } else {
-    header.style.backgroundColor = 'transparent';
-  }
-});
 
 // ScrollRevealを使ってアニメーションを設定
 window.sr = ScrollReveal();

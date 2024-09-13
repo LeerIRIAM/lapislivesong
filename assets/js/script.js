@@ -1,4 +1,4 @@
-// スクロール時にヘッダーの背景色を変更 
+// スクロール時にヘッダーの背景色を変更
 window.addEventListener('scroll', function() {
   const header = document.querySelector('header');
   const scrollPosition = window.scrollY;

@@ -67,12 +67,8 @@ nav ul li a:hover {
   text-align: center;
 }
 
-.overlay h1 {
-  font-size: 48px;
-}
-
-.overlay p {
-  font-size: 20px;
+.overlay h1, .overlay p {
+  opacity: 0;
 }
 
 /* セクション */
@@ -96,6 +92,7 @@ h2 {
 .artist {
   width: 48%;
   margin-bottom: 20px;
+  opacity: 0;
 }
 
 .artist img {
@@ -123,27 +120,14 @@ footer p {
   margin: 0;
 }
 
-/* アニメーション用クラス */
-.fade-in-up {
+/* アニメーション */
+.fade-in {
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 1s ease-out, transform 1s ease-out;
+  transition: opacity 1s ease-in-out;
 }
 
-.fade-in-up.visible {
+.fade-in.visible {
   opacity: 1;
-  transform: translateY(0);
-}
-
-.fade-in-down {
-  opacity: 0;
-  transform: translateY(-20px);
-  transition: opacity 1s ease-out, transform 1s ease-out;
-}
-
-.fade-in-down.visible {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 .slide-in-left {
@@ -168,18 +152,13 @@ footer p {
   transform: translateX(0);
 }
 
-.zoom-in {
+.slide-in-up {
   opacity: 0;
-  transform: scale(0.9);
+  transform: translateY(50px);
   transition: transform 1s ease-in-out, opacity 1s ease-in-out;
 }
 
-.zoom-in.visible {
+.slide-in-up.visible {
   opacity: 1;
-  transform: scale(1);
-}
-
-/* 遅延をつけたアニメーション */
-.delay-200 {
-  transition-delay: 0.2s;
+  transform: translateY(0);
 }

@@ -3,66 +3,88 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lapis Live Event</title>
+  <title>Animusic Fest 2024</title>
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-  <!-- ナビゲーションバー -->
-  <header class="navbar">
+
+  <!-- ヘッダー -->
+  <header class="header">
     <div class="container">
-      <h1 class="logo">Lapis Live</h1>
-      <nav>
+      <img src="assets/images/logo.png" alt="イベントロゴ" class="logo">
+      <nav class="nav">
         <ul>
-          <li><a href="#overview">概要</a></li>
+          <li><a href="#overview">イベント概要</a></li>
           <li><a href="#artists">出演者</a></li>
           <li><a href="#tickets">チケット情報</a></li>
-          <li><a href="artists.html">アーティスト紹介</a></li>
+          <li><a href="#access">アクセス</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- イベント概要セクション -->
-  <section id="overview" class="section overview fade-in">
+  <!-- メインビジュアル -->
+  <section class="main-visual">
+    <img src="assets/images/event.jpg" alt="イベントメイン画像" class="main-image">
+    <div class="overlay">
+      <h1>Animusic Fest 2024</h1>
+      <p>アニメと音楽の夢のコラボレーションを楽しもう！</p>
+    </div>
+  </section>
+
+  <!-- イベント概要 -->
+  <section id="overview" class="section overview">
     <div class="container">
       <h2>イベント概要</h2>
-      <p>「Lapis Live」はファンタジーと音楽が融合した壮大なイベントです。お気に入りのキャラクターと一緒に夢のような時間をお楽しみください。</p>
-      <img src="assets/images/event-image.jpg" alt="イベントのイメージ" class="event-image">
-      <p><strong>日程:</strong> 2024年10月15日</p>
-      <p><strong>場所:</strong> 東京ドーム</p>
+      <p>「Animusic Fest 2024」は、アニメと音楽が融合する最大級のライブイベントです。</p>
+      <ul>
+        <li><strong>開催日:</strong> 2024年8月24日</li>
+        <li><strong>場所:</strong> 埼玉スーパーアリーナ</li>
+      </ul>
     </div>
   </section>
 
-  <!-- 出演者セクション -->
-  <section id="artists" class="section artists fade-in">
+  <!-- 出演者 -->
+  <section id="artists" class="section artists">
     <div class="container">
-      <h2>出演アーティスト</h2>
-      <div class="artist-card">
-        <img src="assets/images/artist1.jpg" alt="アーティスト1">
-        <h3>アーティスト1</h3>
-        <p>アーティスト1の説明。彼らのパフォーマンスはエネルギッシュで、多くのファンを魅了しています。</p>
-      </div>
-      <div class="artist-card">
-        <img src="assets/images/artist2.jpg" alt="アーティスト2">
-        <h3>アーティスト2</h3>
-        <p>アーティスト2の説明。独自のスタイルで知られ、観客を魅了するステージをお届けします。</p>
+      <h2>出演者</h2>
+      <div class="artist-list">
+        <div class="artist">
+          <img src="assets/images/artist1.jpg" alt="アーティスト1">
+          <h3>アーティスト1</h3>
+          <p>人気アニメのオープニングテーマで知られるアーティスト1。</p>
+        </div>
+        <div class="artist">
+          <img src="assets/images/artist2.jpg" alt="アーティスト2">
+          <h3>アーティスト2</h3>
+          <p>アニメソングシーンをリードする実力派アーティスト2。</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- チケット情報セクション -->
-  <section id="tickets" class="section tickets fade-in">
+  <!-- チケット情報 -->
+  <section id="tickets" class="section tickets">
     <div class="container">
       <h2>チケット情報</h2>
-      <p>早めにチケットを購入して、最高の座席を確保しましょう！</p>
+      <p>チケットは公式販売サイトで購入可能です。</p>
       <a href="https://ticket-website.com" class="btn">チケットを購入する</a>
+    </div>
+  </section>
+
+  <!-- アクセス -->
+  <section id="access" class="section access">
+    <div class="container">
+      <h2>アクセス</h2>
+      <p>埼玉スーパーアリーナへのアクセス情報をご覧ください。</p>
+      <p><strong>住所:</strong> 埼玉県さいたま市中央区新都心8</p>
     </div>
   </section>
 
   <!-- フッター -->
   <footer class="footer">
     <div class="container">
-      <p>&copy; 2024 Lapis Live. All Rights Reserved.</p>
+      <p>&copy; 2024 Animusic Fest. All Rights Reserved.</p>
     </div>
   </footer>
 

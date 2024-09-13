@@ -1,121 +1,104 @@
-/* 共通のスタイル */
+/* styles.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f0f0;
+  color: #333;
 }
 
-.container {
-  width: 80%;
-  margin: 0 auto;
-}
-
-/* ナビゲーションバーのスタイル */
-.navbar {
+.header {
   background-color: #333;
-  color: #fff;
-  padding: 1rem 0;
-}
-
-.navbar .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.navbar .logo {
-  font-size: 1.5rem;
-}
-
-.navbar nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-}
-
-.navbar nav ul li {
-  margin-left: 1rem;
-}
-
-.navbar nav ul li a {
-  color: #fff;
-  text-decoration: none;
-}
-
-/* セクションのスタイル */
-.section {
-  padding: 2rem 0;
-}
-
-.section h2 {
-  margin-bottom: 1rem;
-}
-
-.section p {
-  margin-bottom: 1rem;
-}
-
-/* イベント概要セクション */
-.event-image {
-  max-width: 100%;
-  height: auto;
-}
-
-/* 出演者セクション */
-.artist-card {
-  margin-bottom: 2rem;
-}
-
-.artist-card img {
-  width: 150px;
-  height: auto;
-  margin-right: 1rem;
-}
-
-.artist-card h3 {
-  margin: 0;
-}
-
-/* アーティスト紹介セクションのスタイル */
-.artists-intro {
-  background-color: #f9f9f9;
-}
-
-.artist-profile {
-  display: flex;
-  align-items: center;
-  margin-bottom: 2rem;
-}
-
-.artist-profile img {
-  width: 150px;
-  height: auto;
-  margin-right: 1rem;
-}
-
-.artist-profile h3 {
-  margin: 0;
-}
-
-/* チケット情報セクション */
-.btn {
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  background-color: #007bff;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 0.25rem;
-}
-
-.btn:hover {
-  background-color: #0056b3;
-}
-
-/* フッターのスタイル */
-.footer {
-  background-color: #333;
-  color: #fff;
+  padding: 20px;
   text-align: center;
-  padding: 1rem 0;
+}
+
+.title {
+  color: white;
+  font-size: 2.5rem;
+  animation: fadeInDown 1s ease-in-out;
+}
+
+.nav ul {
+  list-style: none;
+}
+
+.nav ul li {
+  display: inline-block;
+  margin: 0 15px;
+}
+
+.nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.nav ul li a:hover {
+  color: #00bcd4;
+}
+
+.section {
+  padding: 50px 20px;
+  text-align: center;
+  background-color: white;
+  margin: 20px 0;
+  opacity: 0;
+  animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.section-content {
+  font-size: 1.2rem;
+}
+
+.song-list {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.song-item {
+  padding: 15px 30px;
+  background-color: #00bcd4;
+  color: white;
+  border-radius: 5px;
+  transition: transform 0.3s ease;
+}
+
+.song-item:hover {
+  transform: scale(1.1);
+}
+
+/* フェードインのアニメーション */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* タイトルにフェードインダウン */
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
